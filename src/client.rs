@@ -27,8 +27,14 @@ impl Default for PoeClient {
 }
 
 impl PoeClient {
-    pub fn new() -> Self {
+    pub fn new(token: String) -> Self {
+        let mut headers = header::HeaderMap::new();
+        headers.insert(
+            header::AUTHORIZATION,
+            header::HeaderValue::from_static(format(!"Bearer: {}", token)),
+        );
         let client = Client::builder()
+            .default_headers(headers)
             .timeout(Duration::from_secs(30))
             .build()
             .unwrap();
