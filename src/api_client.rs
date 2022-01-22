@@ -38,7 +38,7 @@ impl PathOfExileBuilder {
 
     /// Builds a [`PathOfExile`] which can be used to make API requests.
     pub fn build(self) -> PathOfExile {
-        let mut client = PoeClient::new();
+        let mut client = PoeClient::new("");
 
         let mut user_agent = format!("{}/{}", self.application.0, self.application.1);
         if let Some(contact) = self.contact.as_ref() {
