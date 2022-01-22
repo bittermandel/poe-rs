@@ -1,4 +1,4 @@
-use reqwest::{Client, Url};
+use reqwest::{Client, Url, header};
 use serde::de::DeserializeOwned;
 use serde::ser::Serialize;
 use std::collections::{HashMap, LinkedList};
