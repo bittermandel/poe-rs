@@ -31,7 +31,7 @@ impl PoeClient {
         let mut headers = header::HeaderMap::new();
         headers.insert(
             header::AUTHORIZATION,
-            header::HeaderValue::from_static(format!("Bearer: {}", token)),
+            header::HeaderValue::from_str(format!("Bearer: {}", token)),
         );
         let client = Client::builder()
             .default_headers(headers)
