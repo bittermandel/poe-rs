@@ -22,7 +22,7 @@ pub struct PoeClient {
 
 impl Default for PoeClient {
     fn default() -> Self {
-        Self::new("")
+        Self::new("".to_string())
     }
 }
 
