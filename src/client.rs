@@ -22,7 +22,7 @@ pub struct PoeClient {
 
 impl Default for PoeClient {
     fn default() -> Self {
-        Self::new()
+        Self::new("")
     }
 }
 
@@ -31,7 +31,7 @@ impl PoeClient {
         let mut headers = header::HeaderMap::new();
         headers.insert(
             header::AUTHORIZATION,
-            header::HeaderValue::from_static(format(!"Bearer: {}", token)),
+            header::HeaderValue::from_static(format!("Bearer: {}", token)),
         );
         let client = Client::builder()
             .default_headers(headers)
